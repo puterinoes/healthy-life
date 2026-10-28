@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2563EB;
+  --primary-strong: #1D4ED8;
+  --primary-ink: #1E40AF;
+  --primary-soft: #EFF6FF;
+  --primary-soft-2: "#DBEAFE";
+  --primary-border: #BFDBFE;
+  --secondary: #0D1117;
+  --surface: #FFFFFF;
+  --surface-2: #FBFCFD;
+  --surface-muted: #F7F8FA;
+  --surface-sunken: #F2F4F7;
+  --on-surface: #363C47;
+  --on-surface-strong: #0D1117;
+  --on-surface-variant: #5B6472;
+  --on-surface-muted: #697382;
+  --outline: #E7EAEF;
+  --outline-strong: #D6DBE3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #363C47;
+  font-family: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+/* Accessible focus ring per DESIGN.md */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 3px;
+}
+
+/* Scanline effect for headline card */
+.scanline-overlay {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-ticker {
+    animation: none !important;
+  }
+}
